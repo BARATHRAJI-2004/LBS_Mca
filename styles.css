@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    width: 300px;
+    border-radius: 10px;
+    backface-visibility: blur(10px);
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.management {
+    margin-left: 40px;
+}
+
+.login-box:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+    outline: none;
+    font-size: 18px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -18px;
+    left: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-btn,
+.reset-btn,
+.forgot-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #34495e;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover,
+.reset-btn:hover,
+.forgot-btn:hover {
+    background: #2ecc71;
+}
+
+.forgot-btn {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.forgot-btn:hover {
+    color: #fff;
+}
+
+
+/* Grayscale and blur effect */
+
+.container {
+    filter: grayscale(50%);
+}
+
+.container:hover {
+    filter: grayscale(0%);
+}
+
+
+/* Add a submitted class effect */
+
+form.submitted {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+/* Shake effect for invalid inputs */
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+input.shake {
+    animation: shake 0.5s;
+}
+
+
+/* Focus effect for input boxes */
+
+.input-box.focus {
+    border-bottom: 2px solid #2ecc71;
+}
